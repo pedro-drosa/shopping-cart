@@ -55,7 +55,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       }
 
       setCart(newCart);
-      localStorage.setItem('@RocketShoes:cart', JSON.stringify(cart));
+      localStorage.setItem('@RocketShoes:cart', JSON.stringify(newCart));
 
     } catch {
       toast.error('Erro na adição do produto');
@@ -69,7 +69,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       if(idProductExists >= 0) {
         newCart.splice(idProductExists, 1);
         setCart(newCart);
-        localStorage.setItem('@RocketShoes:cart', JSON.stringify(cart));
+        localStorage.setItem('@RocketShoes:cart', JSON.stringify(newCart));
       } else {
         throw Error();
       }
